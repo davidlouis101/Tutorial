@@ -4,6 +4,8 @@ namespace Tutorial;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
+use pocketmine\command\ConsoleCommandSender;
+use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as C;
 
@@ -14,6 +16,7 @@ class Main extends PluginBase{
 	}
 
     public function onEnable(): void{
+	    $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
         $this->getLogger()->info(C::YELLOW . "Enabled Tutorial");
     }
 
@@ -23,6 +26,11 @@ class Main extends PluginBase{
 
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool{
 	    //$sender is a player
+
+        if(!$sender instanceof Player){
+            $sender->sendMessage(C::RED . "You are not a player.");
+            return false;
+        }
         switch($command){
             case "test":
             $sender->sendMessage("BABY GURL XD");
