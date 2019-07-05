@@ -30,6 +30,36 @@ class Main extends PluginBase{
             case "lul":
             $sender->sendMessage("BABY GURLLLLLLLLLLLLLLLLLLLL");
             break;
+            case "feed":
+            if($sender->getFood() == 20){
+                $sender->sendMessage(C::RED . "You don't need food.");
+                return false;
+            }
+            $sender->setFood(20);
+            $sender->sendMessage(C::GREEN . "You have been fed!");
+            break;
+            case "heal":
+            if($sender->getHealth() == $sender->getMaxHealth()){
+                $sender->sendMessage(C::RED . "You don't need health, you are full.");
+                return false;
+            }
+            $sender->setHealth($sender->getMaxHealth());
+            $sender->sendMessage(C::GREEN . "You have been healed!");
+            break;
+            case "fly":
+            if($sender->getAllowFlight()){ //check if player fly is enabled
+                $sender->setAllowFlight(false); //Disables your fly mode
+                $sender->sendMessage(C::GREEN . "You have disabled your flight mode.");
+                return false;
+            }
+            $sender->setAllowFlight(true); //Enables your fly mode
+            $sender->sendMessage(C::GREEN . "You have enabled your flight mode.");
+            break;
+            case "clearinv":
+            $sender->getArmorInventory()->clearAll(); //Clears your armor inventory
+            $sender->getInventory()->clearAll(); //Clears your inventory
+            $sender->sendMessage(C::GREEN . "Cleared your inventory.");
+            break;
         }
         return true;
     }

@@ -9,3 +9,11 @@ commands:
     description: "TEST"
   lul:
     description: "LUL"
+  feed:
+    description: "Feed yourself"
+  heal:
+    description: "Heal yourself"
+  fly:
+    description: "Enable or disable fly"
+  clearinv:
+    description: "Clear your inventory"
