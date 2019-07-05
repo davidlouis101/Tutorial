@@ -3,9 +3,3 @@ version: 1.0.0
 api: 3.0.0
 main: Tutorial\Main
 author: xXNiceYT
-
-commands:
-  test:
-    description: "TEST"
-  lul:
-    description: "LUL"
