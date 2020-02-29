@@ -24,11 +24,11 @@ class Main extends PluginBase{
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool{
 	    //$sender is a player
         switch($command){
-            case "test":
-            $sender->sendMessage("BABY GURL XD");
+            case "YT":
+            $sender->sendMessage("YT : Crow Balde");
             break;
-            case "lul":
-            $sender->sendMessage("BABY GURLLLLLLLLLLLLLLLLLLLL");
+            case "Discord":
+            $sender->sendMessage("Discord : https://discord.gg/fV93frR");
             break;
         }
         return true;
