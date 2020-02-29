@@ -5,7 +5,7 @@ main: Tutorial\Main
 author: xXNiceYT
 
 commands:
-  test:
-    description: "TEST"
-  lul:
-    description: "LUL"
+  YT:
+    description: "YT"
+  Discord:
+    description: "Discord"
